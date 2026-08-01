@@ -1,0 +1,6 @@
+{
+  "name": "Robin Asati | Books. Ideas. Stories.",
+  "description": "Personal website for author and thinker Robin Asati featuring books, essays, reading lists, current projects, and newsletter.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
