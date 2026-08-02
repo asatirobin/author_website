@@ -466,7 +466,24 @@ section {
 }
 
 .about {
-    max-width: 800px;
+    max-width: 900px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 35px;
+    align-items: start;
+}
+
+.about-photo {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    object-fit: cover;
+    aspect-ratio: 3/4;
 }
 
 .timeline {
@@ -624,6 +641,13 @@ footer {
 }
 
 @media(max-width:768px){
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-photo {
+        max-width: 240px;
+        margin: 0 auto 20px auto;
+    }
     .hero h1 {
         font-size: 2.8rem;
     }
@@ -787,6 +811,8 @@ At the moment, I’m immersed in the publication of a satire. Between revisions,
 <div class="about">
 <h2 class="section-title">About</h2>
 
+<div class="about-grid">
+<div class="about-text">
 <p>
 I’m a writer and lifelong reader fascinated by ideas and the ways they shape the world. My work draws on a wide range of interests, including history, creativity, and learning, but I’m less interested in disciplines themselves than in the questions that connect them. Reading widely and thinking deeply are central to my approach, and much of my writing begins with a desire to understand something more clearly.
 </p>
@@ -807,6 +833,13 @@ This website is a home for my books, general musings, notes, and ongoing project
 <strong>Future</strong> — Many ideas yet to be explored
 </div>
 </div>
+</div>
+
+<div class="about-image-wrapper">
+<img src="src/assets/images/robin_portrait_1785677736009.jpg" onerror="this.onerror=null; this.src='assets/images/robin_portrait_1785677736009.jpg';" alt="Robin Asati" class="about-photo" referrerpolicy="no-referrer">
+</div>
+</div>
+
 </div>
 </div>
 </section>
