@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robin Asati | Books. Ideas. Stories.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Caveat:wght@600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Sacramento&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #faf8f5;
+    --card: #ffffff;
+    --text: #111111;
+    --muted: #666666;
+    --accent: #b8864e;
+    --border: #e8e8e8;
+}
+
+.dark {
+    --bg: #0f1115;
+    --card: #171a21;
+    --text: #f4f4f4;
+    --muted: #b4b4b4;
+    --accent: #d4a373;
+    --border: #2d3340;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.container {
+    max-width: 1100px;
+    width: 90%;
+    margin: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: rgba(250, 248, 245, .95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+    transition: background-color .3s ease, border-color .3s ease;
+}
+
+.dark header {
+    background: rgba(15, 17, 21, .95);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.logo {
+    font-family: 'Great Vibes', 'Alex Brush', 'Sacramento', 'Caveat', cursive;
+    font-size: 2.1rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--text);
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.theme-btn {
+    border: none;
+    background: var(--card);
+    color: var(--text);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.theme-btn:hover {
+    border-color: var(--accent);
+}
+
+.hero {
+    padding: 120px 0 90px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.2rem;
+    color: var(--muted);
+}
+
+.cta {
+    margin-top: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 24px;
+    margin: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--text);
+    color: var(--bg);
+}
+
+.btn-secondary {
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+section {
+    padding: 90px 0;
+    border-top: 1px solid var(--border);
+}
+
+.section-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    color: var(--muted);
+    margin-bottom: 40px;
+    font-size: 1.05rem;
+}
+
+.cards {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.card:hover {
+    border-color: var(--accent);
+}
+
+.book-cover {
+    height: 250px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--accent), #6c4f2d);
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 20px;
+}
+
+.book-cover.dark-cover {
+    background: linear-gradient(135deg, #2d3340, #171a21);
+}
+
+.book-cover-wrap {
+    height: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.book-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .book-cover-img {
+    transform: scale(1.03);
+}
+
+.released-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(16, 185, 129, 0.95);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.retailer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+.retailer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.retailer-btn:hover {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+    transform: translateY(-1px);
+}
+
+.card h3 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+    font-weight: 500;
+    align-self: flex-start;
+    transition: all 0.2s;
+}
+
+.btn-small:hover {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+}
+
+.essay-search {
+    width: 100%;
+    max-width: 320px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+.essay {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: padding-left 0.2s;
+}
+
+.essay:hover {
+    padding-left: 8px;
+}
+
+.essay h3 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: var(--text);
+}
+
+.essay:hover h3 {
+    color: var(--accent);
+}
+
+.essay span {
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+.essay p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-top: 6px;
+}
+
+.reading-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.filter-btn {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--muted);
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+}
+
+.reading-list {
+    background: var(--card);
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+}
+
+.reading-list ul {
+    list-style: none;
+}
+
+.reading-list li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reading-list li:last-child {
+    border-bottom: none;
+}
+
+.now-box {
+    background: var(--card);
+    padding: 35px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.now-item p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-top: 4px;
+}
+
+.newsletter {
+    text-align: center;
+    background: var(--card);
+    padding: 60px 30px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+}
+
+.newsletter form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    max-width: 500px;
+    margin: 20px auto 0 auto;
+    flex-wrap: wrap;
+}
+
+.newsletter input {
+    flex: 1;
+    min-width: 240px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.about {
+    max-width: 800px;
+}
+
+.timeline {
+    margin-top: 30px;
+    background: var(--card);
+    padding: 25px 30px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+}
+
+.timeline div {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.timeline div:last-child {
+    border-bottom: none;
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0 35px 0;
+}
+
+.contact-badge {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 12px 20px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.contact-badge a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.contact-badge a:hover {
+    color: var(--accent);
+}
+
+.copy-btn {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    color: var(--muted);
+}
+
+.contact-links {
+    margin-bottom: 40px;
+    color: var(--muted);
+}
+
+.contact-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 8px;
+}
+
+.contact-links a:hover {
+    color: var(--accent);
+}
+
+.contact-form {
+    max-width: 550px;
+    margin: auto;
+    text-align: left;
+    background: var(--card);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-family: inherit;
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 50px 0;
+    border-top: 1px solid var(--border);
+}
+
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--card);
+    color: var(--text);
+    max-width: 700px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    padding: 35px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+@media(max-width:768px){
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<nav>
+<a href="#" class="logo">Robin Asati</a>
+<div class="nav-links">
+<a href="#books">Books</a>
+<a href="#essays">Essays</a>
+<a href="#reading">Reading</a>
+<a href="#now">Now</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+<button class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
+</div>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<h1>Books. Ideas. Stories.</h1>
+<p>
+Exploring curiosity, learning, technology, history,
+creativity, and the questions that shape our lives.
+This is my digital home for books, essays, and ongoing projects.
+</p>
+<div class="cta">
+<a href="#books" class="btn btn-primary">Explore Books</a>
+<a href="#essays" class="btn btn-secondary">Read Essays</a>
+</div>
+</div>
+</section>
+
+<section id="books">
+<div class="container">
+<h2 class="section-title">Featured Work</h2>
+<p class="section-subtitle">Published books and future projects.</p>
+
+<div class="cards">
+<div class="card">
+<div>
+<div class="book-cover-wrap">
+<img src="src/assets/images/distance_to_yesterday_1785655951357.jpg" onerror="this.onerror=null; this.src='assets/images/distance_to_yesterday_1785655951357.jpg';" alt="The Distance to Yesterday Book Cover" class="book-cover-img" referrerpolicy="no-referrer">
+<span class="released-badge">AVAILABLE NOW</span>
+</div>
+<h3 style="margin-bottom: 4px;">The Distance to Yesterday</h3>
+<div style="font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-bottom: 6px;">By Robin Asati</div>
+<div style="font-size: 0.8rem; color: #b8864e; font-weight: 600; margin-bottom: 12px; font-style: italic;">🏆 Winner of the 21st Century Emily Dickinson Award</div>
+<p style="font-size: 0.93rem; line-height: 1.6;">
+The Distance to Yesterday is a journey through memory, love, and time. In these poems, childhood games return with the scent of rain-soaked paper boats, young love lingers in unspoken silences, and the quiet strength of family echoes through pious stories told at dusk. Balancing nostalgia with reflection, this collection moves from the carefree innocence of youth to the unspoken struggles of adulthood.
+</p>
+
+<div style="margin-top: 12px;">
+<div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); margin-bottom: 6px;">🇮🇳 India</div>
+<div class="retailer-links" style="margin-top: 0; margin-bottom: 12px;">
+<a href="https://link.amazon/B07YsDSl2" target="_blank" rel="noopener noreferrer" class="retailer-btn">🛒 Amazon Paperback</a>
+<a href="https://dl.flipkart.com/s/XTxw8RNNNN" target="_blank" rel="noopener noreferrer" class="retailer-btn">🛍️ Flipkart Paperback</a>
+<a href="https://ebooks.bookleafpub.com/product-page/the-distance-to-yesterday" target="_blank" rel="noopener noreferrer" class="retailer-btn">📱 BookLeaf eBook</a>
+</div>
+
+<div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); margin-bottom: 6px;">🌍 International</div>
+<div class="retailer-links" style="margin-top: 0; margin-bottom: 20px;">
+<a href="https://www.amazon.com/dp/B0G1ZFZSVN" target="_blank" rel="noopener noreferrer" class="retailer-btn">🛒 Amazon US / Global</a>
+<a href="https://www.barnesandnoble.com/w/1148728774" target="_blank" rel="noopener noreferrer" class="retailer-btn">📚 Barnes & Noble</a>
+</div>
+</div>
+</div>
+<button class="btn-small" onclick="openBookModal('distance')">Overview & Excerpt</button>
+</div>
+
+<div class="card">
+<div>
+<div class="book-cover dark-cover">
+<div style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 5px;">COMING SOON</div>
+Future Project
+</div>
+<h3>Future Project</h3>
+<p>
+Details to be updated later. Future books and creative projects will live here as they naturally evolve.
+</p>
+</div>
+<button class="btn-small" onclick="openBookModal('future')">Project Details</button>
+</div>
+</div>
+</div>
+</section>
+
+<section id="essays">
+<div class="container">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+<div>
+<h2 class="section-title">Latest Essays</h2>
+<p class="section-subtitle" style="margin-bottom: 0;">Thoughts, observations and experiments.</p>
+</div>
+<input type="text" id="essaySearch" class="essay-search" placeholder="Search essays..." oninput="filterEssays()">
+</div>
+
+<div id="essayList">
+<div class="essay" onclick="openEssayModal(0)" data-title="why curiosity matters more than talent">
+<h3>Why Curiosity Matters More Than Talent</h3>
+<span>7 min read • July 2026</span>
+<p>Talent provides an initial speed boost, but curiosity creates an infinite acceleration curve that compounds over decades.</p>
+</div>
+
+<div class="essay" onclick="openEssayModal(1)" data-title="the hidden cost of convenience">
+<h3>The Hidden Cost of Convenience</h3>
+<span>5 min read • June 2026</span>
+<p>When friction is completely removed from human experience, we sacrifice the very struggles that build mastery, patience, and character.</p>
+</div>
+
+<div class="essay" onclick="openEssayModal(2)" data-title="how ai changes learning">
+<h3>How AI Changes Learning</h3>
+<span>12 min read • May 2026</span>
+<p>AI shifts the objective of education from information memorization to questioning capability, critical evaluation, and intellectual synthesis.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="reading">
+<div class="container">
+<h2 class="section-title">Reading List</h2>
+<p class="section-subtitle">Books that have deeply shaped my worldview and ongoing research.</p>
+
+<div class="reading-filters">
+<button class="filter-btn active" onclick="filterReading('all', this)">All</button>
+<button class="filter-btn" onclick="filterReading('reading', this)">📖 Currently Reading</button>
+<button class="filter-btn" onclick="filterReading('completed', this)">✅ Completed</button>
+</div>
+
+<div class="reading-list">
+<ul id="readingUl">
+<li data-status="reading">
+<span>📖 <strong>The Beginning of Infinity</strong> <span style="color:var(--muted); font-size:0.9rem;">by David Deutsch</span></span>
+<span style="font-size:0.8rem; background: rgba(184,134,78,0.15); color:var(--accent); padding:3px 10px; border-radius:12px; font-weight:600;">Reading Now</span>
+</li>
+<li data-status="completed">
+<span>📖 <strong>Meditations</strong> <span style="color:var(--muted); font-size:0.9rem;">by Marcus Aurelius</span></span>
+<span style="color:#f59e0b; font-size:0.9rem;">★★★★★</span>
+</li>
+<li data-status="completed">
+<span>📖 <strong>Sapiens</strong> <span style="color:var(--muted); font-size:0.9rem;">by Yuval Noah Harari</span></span>
+<span style="color:#f59e0b; font-size:0.9rem;">★★★★★</span>
+</li>
+<li data-status="completed">
+<span>📖 <strong>Atomic Habits</strong> <span style="color:var(--muted); font-size:0.9rem;">by James Clear</span></span>
+<span style="color:#f59e0b; font-size:0.9rem;">★★★★★</span>
+</li>
+<li data-status="completed">
+<span>📖 <strong>The Innovators</strong> <span style="color:var(--muted); font-size:0.9rem;">by Walter Isaacson</span></span>
+<span style="color:#f59e0b; font-size:0.9rem;">★★★★☆</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="now">
+<div class="container">
+<h2 class="section-title">What I'm Doing Now</h2>
+<p class="section-subtitle">Updated August 2026 • Inspired by Derek Sivers /now movement</p>
+
+<div class="now-box">
+<div class="now-item">
+<strong>✍️ Writing</strong>
+<p>Drafting my next book on curiosity and compounding intellect, plus bi-weekly essays on digital culture.</p>
+</div>
+<div class="now-item">
+<strong>📖 Reading</strong>
+<p>Exploring foundational works in epistemology, complex systems theory, and classical stoic philosophy.</p>
+</div>
+<div class="now-item">
+<strong>💻 Learning</strong>
+<p>Hands-on experimentation with modern AI frameworks, web publishing tools, and creative coding.</p>
+</div>
+<div class="now-item">
+<strong>💡 Thinking About</strong>
+<p>How curiosity compounds over multi-decade horizons and the future of deep reading.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+<div class="about">
+<h2 class="section-title">About</h2>
+
+<p style="font-size: 1.2rem; font-weight: 600; color: var(--accent); margin-bottom: 10px;">
+Hi, I'm Robin.
+</p>
+
+<p>
+I'm a writer interested in ideas.
+My work explores curiosity, creativity,
+technology, history and lifelong learning.
+Rather than limiting myself to one genre,
+I enjoy following questions wherever they lead.
+</p>
+
+<p style="margin-top: 15px; color: var(--muted);">
+This website serves as a place to publish books,
+essays, notes and ongoing projects.
+</p>
+
+<div class="timeline">
+<h4 style="font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin-bottom:10px;">Journey & Milestones</h4>
+<div>
+<strong>2026</strong> — Launched robinasati.com
+</div>
+<div>
+<strong>2027</strong> — First book published
+</div>
+<div>
+<strong>Future</strong> — Many ideas yet to be explored
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="newsletter">
+<h2 class="section-title">The Curious Mind Newsletter</h2>
+<p>
+Occasional notes about books, ideas,
+writing and things worth thinking about.
+</p>
+
+<form id="newsletterForm" onsubmit="handleNewsletter(event)">
+<input type="email" id="newsletterEmail" placeholder="Enter your email address" required>
+<button type="submit" class="btn btn-primary" style="margin: 0;">Subscribe</button>
+</form>
+<div id="newsletterSuccess" style="display:none; margin-top:20px; color:#10b981; font-weight:600;">
+Thank you for subscribing! Look out for your first letter soon.
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="contact">
+<h2 class="section-title">Contact</h2>
+<p style="color: var(--muted);">Have a question, feedback, or want to collaborate? I'd love to hear from you.</p>
+
+<div class="contact-badges">
+<div class="contact-badge">
+✉️ <a href="mailto:robinasati.author@gmail.com">robinasati.author@gmail.com</a>
+<button class="copy-btn" onclick="copyText('robinasati.author@gmail.com', this)">Copy</button>
+</div>
+
+<div class="contact-badge">
+📞 <a href="tel:+918806755679">+91 88067 55679</a>
+<button class="copy-btn" onclick="copyText('+91 88067 55679', this)">Copy</button>
+</div>
+</div>
+
+<div class="contact-links">
+<a href="https://linkedin.com" target="_blank">LinkedIn</a> •
+<a href="https://x.com" target="_blank">X</a> •
+<a href="https://github.com" target="_blank">GitHub</a>
+</div>
+
+<div class="contact-form">
+<h3 style="font-family:'Source Serif 4',serif; margin-bottom:15px;">Send a Direct Message</h3>
+<form onsubmit="handleContact(event)">
+<label style="font-size:0.8rem; font-weight:600; color:var(--muted); text-transform:uppercase;">Your Name</label>
+<input type="text" placeholder="Jane Doe" required>
+
+<label style="font-size:0.8rem; font-weight:600; color:var(--muted); text-transform:uppercase;">Your Email</label>
+<input type="email" placeholder="jane@example.com" required>
+
+<label style="font-size:0.8rem; font-weight:600; color:var(--muted); text-transform:uppercase;">Message</label>
+<textarea rows="4" placeholder="Hello Robin..." required></textarea>
+
+<button type="submit" class="btn btn-primary" style="margin:0; width:100%;">Send Message</button>
+</form>
+<div id="contactSuccess" style="display:none; margin-top:15px; color:#10b981; font-weight:600; text-align:center;">
+Message sent successfully! Robin will get back to you shortly.
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p style="font-family:'Source Serif 4',serif; font-size:1.4rem; font-weight:700; color:var(--text);">Robin Asati</p>
+<p>Books. Ideas. Stories.</p>
+<br>
+<p>© 2026 Robin Asati</p>
+</div>
+</footer>
+
+<!-- Book Modal -->
+<div id="bookModal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'bookModal')">
+<div class="modal-content">
+<button class="modal-close" onclick="closeModal('bookModal')">✕</button>
+<div id="bookModalBody"></div>
+</div>
+</div>
+
+<!-- Essay Modal -->
+<div id="essayModal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'essayModal')">
+<div class="modal-content">
+<button class="modal-close" onclick="closeModal('essayModal')">✕</button>
+<div id="essayModalBody"></div>
+</div>
+</div>
+
+<script>
+function toggleTheme() {
+    document.body.classList.toggle('dark');
+    const btn = document.querySelector('.theme-btn');
+    if (document.body.classList.contains('dark')) {
+        btn.innerHTML = '☀️ Light';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        btn.innerHTML = '🌙 Dark';
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark');
+    document.querySelector('.theme-btn').innerHTML = '☀️ Light';
+}
+
+function copyText(text, btn) {
+    navigator.clipboard.writeText(text);
+    const originalText = btn.innerText;
+    btn.innerText = 'Copied!';
+    btn.style.color = '#10b981';
+    setTimeout(() => {
+        btn.innerText = originalText;
+        btn.style.color = 'var(--muted)';
+    }, 2000);
+}
+
+function filterEssays() {
+    const query = document.getElementById('essaySearch').value.toLowerCase();
+    const essays = document.querySelectorAll('#essayList .essay');
+    essays.forEach(e => {
+        const title = e.getAttribute('data-title') || '';
+        const text = e.innerText.toLowerCase();
+        if (title.includes(query) || text.includes(query)) {
+            e.style.display = 'block';
+        } else {
+            e.style.display = 'none';
+        }
+    });
+}
+
+function filterReading(status, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    
+    const items = document.querySelectorAll('#readingUl li');
+    items.forEach(li => {
+        if (status === 'all' || li.getAttribute('data-status') === status) {
+            li.style.display = 'flex';
+        } else {
+            li.style.display = 'none';
+        }
+    });
+}
+
+const essayData = [
+    {
+        title: "Why Curiosity Matters More Than Talent",
+        meta: "7 min read • July 2026 • Philosophy & Mind",
+        content: `<p>We routinely overestimate talent because talent produces visible early results. A child who plays piano effortlessly at seven earns immediate acclaim.</p>
+        <p>Yet when we look across thirty- or forty-year career trajectories, raw talent frequently plateaus. High innate ability often breeds low tolerance for friction. When gifted individuals encounter domains where intuition fails, they often retreat.</p>
+        <h3 style="font-family:'Source Serif 4',serif; margin-top:20px; margin-bottom:100px;">Curiosity as an Asymmetrical Advantage</h3>
+        <p>Curiosity operates under a completely different mechanic. Unlike talent, curiosity is an appetite. It transforms the friction of not knowing into an energetic engagement.</p>
+        <ul style="margin: 15px 0 15px 20px; line-height:2;">
+        <li><strong>Sustained Duration:</strong> A curious thinker stays in the problem space long after others become bored.</li>
+        <li><strong>Cross-Pollination:</strong> Curiosity drives exploration across disparate domains.</li>
+        <li><strong>Resilience to Failure:</strong> Mistakes are not an injury to identity—they are fascinating data.</li>
+        </ul>
+        <p><em>If talent grows linearly, curiosity compounds exponentially.</em></p>`
+    },
+    {
+        title: "The Hidden Cost of Convenience",
+        meta: "5 min read • June 2026 • Technology & Culture",
+        content: `<p>Modern technological progress is largely measured by how efficiently it removes friction. We order food with a tap, generate text with a prompt, and navigate cities without ever opening a map.</p>
+        <p>Friction is treated as an enemy to be eradicated. But friction is also the precise vector through which human capability is forged.</p>
+        <h3 style="font-family:'Source Serif 4',serif; margin-top:20px; margin-bottom:10px;">What We Lose When Everything Is Instant</h3>
+        <p>When physical effort and memory retrieval are outsourced entirely, subtle cognitive atrophy occurs: shortened horizons of effort, loss of serendipitous discoveries, and fragile agency.</p>
+        <p>The solution is the deliberate cultivation of <strong>intentional friction</strong> in learning, craftsmanship, and relationships.</p>`
+    },
+    {
+        title: "How AI Changes Learning",
+        meta: "12 min read • May 2026 • Education & Future",
+        content: `<p>For centuries, formal education was structured around information scarcity. The teacher held knowledge; the student's task was to absorb and reproduce it.</p>
+        <p>Generative AI fundamentally upends this paradigm. When any factual answer can be generated in seconds, the value of raw storage drops to near zero.</p>
+        <h3 style="font-family:'Source Serif 4',serif; margin-top:20px; margin-bottom:10px;">The New Core Competencies</h3>
+        <p>In an AI-augmented world, learning focuses on three high-order capabilities:</p>
+        <ol style="margin:15px 0 15px 20px; line-height:2;">
+        <li><strong>Epistemic Hygiene:</strong> Auditing claims and verifying source truth.</li>
+        <li><strong>Socratic Prompting:</strong> Formulating precise, constrained, high-level questions.</li>
+        <li><strong>Cross-Disciplinary Synthesis:</strong> Connecting ideas across radically different fields.</li>
+        </ol>`
+    }
+];
+
+function openEssayModal(index) {
+    const essay = essayData[index];
+    const body = document.getElementById('essayModalBody');
+    body.innerHTML = `
+        <div style="font-size:0.85rem; color:var(--muted); margin-bottom:10px;">${essay.meta}</div>
+        <h2 style="font-family:'Source Serif 4',serif; font-size:2rem; margin-bottom:20px;">${essay.title}</h2>
+        <div style="font-size:1.05rem; line-height:1.8;">${essay.content}</div>
+    `;
+    document.getElementById('essayModal').classList.add('active');
+}
+
+function openBookModal(type) {
+    const body = document.getElementById('bookModalBody');
+    if (type === 'distance' || type === 'upcoming') {
+        body.innerHTML = `
+            <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 20px;">
+              <img src="src/assets/images/distance_to_yesterday_1785655951357.jpg" onerror="this.onerror=null; this.src='assets/images/distance_to_yesterday_1785655951357.jpg';" alt="The Distance to Yesterday" style="width: 150px; height: 220px; object-fit: cover; border-radius: 10px; border: 1px solid var(--border);" referrerpolicy="no-referrer" />
+              <div style="flex: 1; min-width: 220px;">
+                <div style="font-size:0.85rem; color:#10b981; font-weight:700; text-transform:uppercase; margin-bottom:5px;">AVAILABLE NOW • RELEASED</div>
+                <h2 style="font-family:'Source Serif 4',serif; font-size:2rem; margin-bottom:5px;">The Distance to Yesterday</h2>
+                <div style="font-size:1rem; color:var(--accent); font-weight:600; margin-bottom:6px;">By Robin Asati</div>
+                <div style="font-size:0.85rem; color:#b8864e; font-weight:600; margin-bottom:12px; font-style:italic;">🏆 Winner of the 21st Century Emily Dickinson Award</div>
+                <p style="font-style:italic; color:var(--muted); font-size:0.95rem;">"A journey through memory, love, and time."</p>
+              </div>
+            </div>
+
+            <p style="line-height:1.8; margin-bottom:20px; font-size:1.05rem;">
+            The Distance to Yesterday is a journey through memory, love, and time. In these poems, childhood games return with the scent of rain-soaked paper boats, young love lingers in unspoken silences, and the quiet strength of family echoes through pious stories told at dusk. Balancing nostalgia with reflection, this collection moves from the carefree innocence of youth to the unspoken struggles of adulthood. With a voice both tender and contemplative, Robin Asati captures the fragments of life that never truly leave us - they wait quietly, like shadows and whispers, ready to be remembered.
+            </p>
+
+            <div style="background:var(--bg); padding:20px; border-radius:12px; border:1px solid var(--border); margin-bottom:25px;">
+              <strong style="font-family:'Source Serif 4',serif; font-size:1.1rem; color:var(--text);">CHAPTER ONE EXCERPT:</strong>
+              <p style="font-family:'Source Serif 4',serif; font-style:italic; margin-top:10px; line-height:1.8; color:var(--text);">
+              "Memory is not a museum of static relics; it is an active tide. On certain quiet evenings, the distance between where you stand today and yesterday collapses into the span of a single breath..."
+              </p>
+            </div>
+
+            <div style="margin-top:20px;">
+              <div style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:var(--accent); margin-bottom:8px;">🇮🇳 Buy in India</div>
+              <div class="retailer-links" style="margin-top:0; margin-bottom:15px;">
+                <a href="https://link.amazon/B07YsDSl2" target="_blank" rel="noopener noreferrer" class="retailer-btn" style="padding:8px 14px; font-size:0.85rem;">🛒 Amazon Paperback</a>
+                <a href="https://dl.flipkart.com/s/XTxw8RNNNN" target="_blank" rel="noopener noreferrer" class="retailer-btn" style="padding:8px 14px; font-size:0.85rem;">🛍️ Flipkart Paperback</a>
+                <a href="https://ebooks.bookleafpub.com/product-page/the-distance-to-yesterday" target="_blank" rel="noopener noreferrer" class="retailer-btn" style="padding:8px 14px; font-size:0.85rem;">📱 BookLeaf eBook</a>
+              </div>
+
+              <div style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:var(--accent); margin-bottom:8px;">🌍 Buy Internationally</div>
+              <div class="retailer-links" style="margin-top:0;">
+                <a href="https://www.amazon.com/dp/B0G1ZFZSVN" target="_blank" rel="noopener noreferrer" class="retailer-btn" style="padding:8px 14px; font-size:0.85rem;">🛒 Amazon (Global)</a>
+                <a href="https://www.barnesandnoble.com/w/1148728774" target="_blank" rel="noopener noreferrer" class="retailer-btn" style="padding:8px 14px; font-size:0.85rem;">📚 Barnes & Noble</a>
+              </div>
+            </div>
+        `;
+    } else {
+        body.innerHTML = `
+            <div style="font-size:0.85rem; color:var(--accent); font-weight:600; text-transform:uppercase; margin-bottom:5px;">In Concept Development</div>
+            <h2 style="font-family:'Source Serif 4',serif; font-size:2rem; margin-bottom:15px;">Future Project</h2>
+            <p style="font-style:italic; color:var(--muted); margin-bottom:20px;">"Exploring the boundary between artificial intelligence, human memory, and storytelling."</p>
+            <p style="line-height:1.8;">Details to be updated later. Future books, essays, and creative writing projects will live here as they naturally evolve.</p>
+        `;
+    }
+    document.getElementById('bookModal').classList.add('active');
+}
+
+function closeModal(id) {
+    document.getElementById(id).classList.remove('active');
+}
+
+function closeModalOnOverlay(e, id) {
+    if (e.target.id === id) {
+        closeModal(id);
+    }
+}
+
+function handleNewsletter(e) {
+    e.preventDefault();
+    document.getElementById('newsletterForm').style.display = 'none';
+    document.getElementById('newsletterSuccess').style.display = 'block';
+}
+
+function handleContact(e) {
+    e.preventDefault();
+    e.target.reset();
+    document.getElementById('contactSuccess').style.display = 'block';
+}
+</script>
+</body>
+</html>
