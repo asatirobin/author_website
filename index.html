@@ -230,6 +230,75 @@ section {
     background: linear-gradient(135deg, #2d3340, #171a21);
 }
 
+.book-cover-wrap {
+    height: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.book-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .book-cover-img {
+    transform: scale(1.03);
+}
+
+.released-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(16, 185, 129, 0.95);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.retailer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+.retailer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.retailer-btn:hover {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+    transform: translateY(-1px);
+}
+
 .card h3 {
     font-family: 'Source Serif 4', Georgia, serif;
     font-size: 1.5rem;
@@ -606,22 +675,38 @@ This is my digital home for books, essays, and ongoing projects.
 <section id="books">
 <div class="container">
 <h2 class="section-title">Featured Work</h2>
-<p class="section-subtitle">Current and upcoming projects.</p>
+<p class="section-subtitle">Published books and future projects.</p>
 
 <div class="cards">
 <div class="card">
 <div>
-<div class="book-cover">
-<div style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 5px;">YOUR NEXT BOOK</div>
-Upcoming Book Title
+<div class="book-cover-wrap">
+<img src="/src/assets/images/distance_to_yesterday_1785655951357.jpg" alt="The Distance to Yesterday Book Cover" class="book-cover-img" referrerpolicy="no-referrer">
+<span class="released-badge">AVAILABLE NOW</span>
 </div>
-<h3>Upcoming Book Title</h3>
-<p>
-Replace this section with your first published work.
-Include the hook, description and purchasing links.
+<h3 style="margin-bottom: 4px;">The Distance to Yesterday</h3>
+<div style="font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-bottom: 6px;">By Robin Asati</div>
+<div style="font-size: 0.8rem; color: #b8864e; font-weight: 600; margin-bottom: 12px; font-style: italic;">🏆 Winner of the 21st Century Emily Dickinson Award</div>
+<p style="font-size: 0.93rem; line-height: 1.6;">
+The Distance to Yesterday is a journey through memory, love, and time. In these poems, childhood games return with the scent of rain-soaked paper boats, young love lingers in unspoken silences, and the quiet strength of family echoes through pious stories told at dusk. Balancing nostalgia with reflection, this collection moves from the carefree innocence of youth to the unspoken struggles of adulthood.
 </p>
+
+<div style="margin-top: 12px;">
+<div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); margin-bottom: 6px;">🇮🇳 India</div>
+<div class="retailer-links" style="margin-top: 0; margin-bottom: 12px;">
+<a href="https://link.amazon/B07YsDSl2" target="_blank" rel="noopener noreferrer" class="retailer-btn">🛒 Amazon Paperback</a>
+<a href="https://www.flipkart.com/p/itmc47537a43895a" target="_blank" rel="noopener noreferrer" class="retailer-btn">🛍️ Flipkart Paperback</a>
+<a href="https://ebooks.bookleafpub.com/product-page/the-distance-to-yesterday" target="_blank" rel="noopener noreferrer" class="retailer-btn">📱 BookLeaf eBook</a>
 </div>
-<button class="btn-small" onclick="openBookModal('upcoming')">Overview & Excerpt</button>
+
+<div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); margin-bottom: 6px;">🌍 International</div>
+<div class="retailer-links" style="margin-top: 0; margin-bottom: 20px;">
+<a href="https://www.amazon.com/dp/B0G1ZFZSVN" target="_blank" rel="noopener noreferrer" class="retailer-btn">🛒 Amazon US / Global</a>
+<a href="https://www.barnesandnoble.com/w/1148728774" target="_blank" rel="noopener noreferrer" class="retailer-btn">📚 Barnes & Noble</a>
+</div>
+</div>
+</div>
+<button class="btn-small" onclick="openBookModal('distance')">Overview & Excerpt</button>
 </div>
 
 <div class="card">
@@ -632,8 +717,7 @@ Future Project
 </div>
 <h3>Future Project</h3>
 <p>
-Your future books can live here regardless of genre,
-allowing your work to evolve naturally.
+Details to be updated later. Future books and creative projects will live here as they naturally evolve.
 </p>
 </div>
 <button class="btn-small" onclick="openBookModal('future')">Project Details</button>
@@ -977,17 +1061,43 @@ function openEssayModal(index) {
 
 function openBookModal(type) {
     const body = document.getElementById('bookModalBody');
-    if (type === 'upcoming') {
+    if (type === 'distance' || type === 'upcoming') {
         body.innerHTML = `
-            <div style="font-size:0.85rem; color:var(--accent); font-weight:600; text-transform:uppercase; margin-bottom:5px;">Expected Fall 2027</div>
-            <h2 style="font-family:'Source Serif 4',serif; font-size:2rem; margin-bottom:15px;">Upcoming Book Title</h2>
-            <p style="font-style:italic; color:var(--muted); margin-bottom:20px;">"An exploration of curiosity and compounding intellect in the digital age."</p>
-            <p style="line-height:1.8; margin-bottom:20px;">This book explores how curiosity acts as an intellectual multiplier. In an era dominated by rapid automated answers, the ability to formulate deep questions and synthesize distinct disciplines becomes the primary superpower of human thinkers.</p>
-            <div style="background:var(--bg); p:20px; padding:20px; border-radius:12px; border:1px solid var(--border);">
-            <strong style="font-family:'Source Serif 4',serif;">CHAPTER ONE EXCERPT:</strong>
-            <p style="font-family:'Source Serif 4',serif; font-style:italic; margin-top:10px; line-height:1.8; color:var(--text);">
-            "We often treat curiosity as a spontaneous emotional spark—an unpredictable itch. But sustained intellectual breakthrough is rarely built on erratic sparks. It is built on deliberate systems of attention..."
+            <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 20px;">
+              <img src="/src/assets/images/distance_to_yesterday_1785655951357.jpg" alt="The Distance to Yesterday" style="width: 150px; height: 220px; object-fit: cover; border-radius: 10px; border: 1px solid var(--border);" referrerpolicy="no-referrer" />
+              <div style="flex: 1; min-width: 220px;">
+                <div style="font-size:0.85rem; color:#10b981; font-weight:700; text-transform:uppercase; margin-bottom:5px;">AVAILABLE NOW • RELEASED</div>
+                <h2 style="font-family:'Source Serif 4',serif; font-size:2rem; margin-bottom:5px;">The Distance to Yesterday</h2>
+                <div style="font-size:1rem; color:var(--accent); font-weight:600; margin-bottom:6px;">By Robin Asati</div>
+                <div style="font-size:0.85rem; color:#b8864e; font-weight:600; margin-bottom:12px; font-style:italic;">🏆 Winner of the 21st Century Emily Dickinson Award</div>
+                <p style="font-style:italic; color:var(--muted); font-size:0.95rem;">"A journey through memory, love, and time."</p>
+              </div>
+            </div>
+
+            <p style="line-height:1.8; margin-bottom:20px; font-size:1.05rem;">
+            The Distance to Yesterday is a journey through memory, love, and time. In these poems, childhood games return with the scent of rain-soaked paper boats, young love lingers in unspoken silences, and the quiet strength of family echoes through pious stories told at dusk. Balancing nostalgia with reflection, this collection moves from the carefree innocence of youth to the unspoken struggles of adulthood. With a voice both tender and contemplative, Robin Asati captures the fragments of life that never truly leave us - they wait quietly, like shadows and whispers, ready to be remembered.
             </p>
+
+            <div style="background:var(--bg); padding:20px; border-radius:12px; border:1px solid var(--border); margin-bottom:25px;">
+              <strong style="font-family:'Source Serif 4',serif; font-size:1.1rem; color:var(--text);">CHAPTER ONE EXCERPT:</strong>
+              <p style="font-family:'Source Serif 4',serif; font-style:italic; margin-top:10px; line-height:1.8; color:var(--text);">
+              "Memory is not a museum of static relics; it is an active tide. On certain quiet evenings, the distance between where you stand today and yesterday collapses into the span of a single breath..."
+              </p>
+            </div>
+
+            <div style="margin-top:20px;">
+              <div style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:var(--accent); margin-bottom:8px;">🇮🇳 Buy in India</div>
+              <div class="retailer-links" style="margin-top:0; margin-bottom:15px;">
+                <a href="https://link.amazon/B07YsDSl2" target="_blank" rel="noopener noreferrer" class="retailer-btn" style="padding:8px 14px; font-size:0.85rem;">🛒 Amazon Paperback</a>
+                <a href="https://www.flipkart.com/p/itmc47537a43895a" target="_blank" rel="noopener noreferrer" class="retailer-btn" style="padding:8px 14px; font-size:0.85rem;">🛍️ Flipkart Paperback</a>
+                <a href="https://ebooks.bookleafpub.com/product-page/the-distance-to-yesterday" target="_blank" rel="noopener noreferrer" class="retailer-btn" style="padding:8px 14px; font-size:0.85rem;">📱 BookLeaf eBook</a>
+              </div>
+
+              <div style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:var(--accent); margin-bottom:8px;">🌍 Buy Internationally</div>
+              <div class="retailer-links" style="margin-top:0;">
+                <a href="https://www.amazon.com/dp/B0G1ZFZSVN" target="_blank" rel="noopener noreferrer" class="retailer-btn" style="padding:8px 14px; font-size:0.85rem;">🛒 Amazon (Global)</a>
+                <a href="https://www.barnesandnoble.com/w/1148728774" target="_blank" rel="noopener noreferrer" class="retailer-btn" style="padding:8px 14px; font-size:0.85rem;">📚 Barnes & Noble</a>
+              </div>
             </div>
         `;
     } else {
@@ -995,7 +1105,7 @@ function openBookModal(type) {
             <div style="font-size:0.85rem; color:var(--accent); font-weight:600; text-transform:uppercase; margin-bottom:5px;">In Concept Development</div>
             <h2 style="font-family:'Source Serif 4',serif; font-size:2rem; margin-bottom:15px;">Future Project</h2>
             <p style="font-style:italic; color:var(--muted); margin-bottom:20px;">"Exploring the boundary between artificial intelligence, human memory, and storytelling."</p>
-            <p style="line-height:1.8;">A series of philosophical narratives and essays examining how synthetic intelligence reframes human creativity, memory, and our enduring search for meaning.</p>
+            <p style="line-height:1.8;">Details to be updated later. Future books, essays, and creative writing projects will live here as they naturally evolve.</p>
         `;
     }
     document.getElementById('bookModal').classList.add('active');
