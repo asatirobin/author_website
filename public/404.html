@@ -646,7 +646,7 @@ footer {
 <a href="#" class="logo">Robin Asati</a>
 <div class="nav-links">
 <a href="#books">Books</a>
-<a href="#essays">Essays</a>
+<a href="#blog">Blog</a>
 <a href="#reading">Reading</a>
 <a href="#now">Now</a>
 <a href="#about">About</a>
@@ -663,11 +663,11 @@ footer {
 <p>
 Exploring curiosity, learning, technology, history,
 creativity, and the questions that shape our lives.
-This is my digital home for books, essays, and ongoing projects.
+This is my digital home for books, blog, and ongoing projects.
 </p>
 <div class="cta">
 <a href="#books" class="btn btn-primary">Explore Books</a>
-<a href="#essays" class="btn btn-secondary">Read Essays</a>
+<a href="#blog" class="btn btn-secondary">Read Blog</a>
 </div>
 </div>
 </section>
@@ -726,35 +726,10 @@ Details to be updated later. Future books and creative projects will live here a
 </div>
 </section>
 
-<section id="essays">
+<section id="blog">
 <div class="container">
-<div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
-<div>
-<h2 class="section-title">Latest Essays</h2>
-<p class="section-subtitle" style="margin-bottom: 0;">Thoughts, observations and experiments.</p>
-</div>
-<input type="text" id="essaySearch" class="essay-search" placeholder="Search essays..." oninput="filterEssays()">
-</div>
-
-<div id="essayList">
-<div class="essay" onclick="openEssayModal(0)" data-title="why curiosity matters more than talent">
-<h3>Why Curiosity Matters More Than Talent</h3>
-<span>7 min read • July 2026</span>
-<p>Talent provides an initial speed boost, but curiosity creates an infinite acceleration curve that compounds over decades.</p>
-</div>
-
-<div class="essay" onclick="openEssayModal(1)" data-title="the hidden cost of convenience">
-<h3>The Hidden Cost of Convenience</h3>
-<span>5 min read • June 2026</span>
-<p>When friction is completely removed from human experience, we sacrifice the very struggles that build mastery, patience, and character.</p>
-</div>
-
-<div class="essay" onclick="openEssayModal(2)" data-title="how ai changes learning">
-<h3>How AI Changes Learning</h3>
-<span>12 min read • May 2026</span>
-<p>AI shifts the objective of education from information memorization to questioning capability, critical evaluation, and intellectual synthesis.</p>
-</div>
-</div>
+<h2 class="section-title">Blog</h2>
+<p class="section-subtitle">To be updated</p>
 </div>
 </section>
 
@@ -764,32 +739,31 @@ Details to be updated later. Future books and creative projects will live here a
 <p class="section-subtitle">Books that have deeply shaped my worldview and ongoing research.</p>
 
 <div class="reading-filters">
-<button class="filter-btn active" onclick="filterReading('all', this)">All</button>
-<button class="filter-btn" onclick="filterReading('reading', this)">📖 Currently Reading</button>
+<button class="filter-btn active" onclick="filterReading('reading', this)">📖 Currently Reading</button>
 <button class="filter-btn" onclick="filterReading('completed', this)">✅ Completed</button>
 </div>
 
 <div class="reading-list">
 <ul id="readingUl">
 <li data-status="reading">
-<span>📖 <strong>The Beginning of Infinity</strong> <span style="color:var(--muted); font-size:0.9rem;">by David Deutsch</span></span>
+<span>📖 <strong>Sharp Objects</strong> <span style="color:var(--muted); font-size:0.9rem;">by Gillian Flynn</span></span>
 <span style="font-size:0.8rem; background: rgba(184,134,78,0.15); color:var(--accent); padding:3px 10px; border-radius:12px; font-weight:600;">Reading Now</span>
 </li>
-<li data-status="completed">
-<span>📖 <strong>Meditations</strong> <span style="color:var(--muted); font-size:0.9rem;">by Marcus Aurelius</span></span>
+<li data-status="completed" style="display: none;">
+<span>📖 <strong>Rebecca</strong> <span style="color:var(--muted); font-size:0.9rem;">by Daphne du Maurier (1938)</span></span>
 <span style="color:#f59e0b; font-size:0.9rem;">★★★★★</span>
 </li>
-<li data-status="completed">
-<span>📖 <strong>Sapiens</strong> <span style="color:var(--muted); font-size:0.9rem;">by Yuval Noah Harari</span></span>
+<li data-status="completed" style="display: none;">
+<span>📖 <strong>The Talented Mr. Ripley</strong> <span style="color:var(--muted); font-size:0.9rem;">by Patricia Highsmith (1955)</span></span>
 <span style="color:#f59e0b; font-size:0.9rem;">★★★★★</span>
 </li>
-<li data-status="completed">
-<span>📖 <strong>Atomic Habits</strong> <span style="color:var(--muted); font-size:0.9rem;">by James Clear</span></span>
+<li data-status="completed" style="display: none;">
+<span>📖 <strong>The Silence of the Lambs</strong> <span style="color:var(--muted); font-size:0.9rem;">by Thomas Harris (1988)</span></span>
 <span style="color:#f59e0b; font-size:0.9rem;">★★★★★</span>
 </li>
-<li data-status="completed">
-<span>📖 <strong>The Innovators</strong> <span style="color:var(--muted); font-size:0.9rem;">by Walter Isaacson</span></span>
-<span style="color:#f59e0b; font-size:0.9rem;">★★★★☆</span>
+<li data-status="completed" style="display: none;">
+<span>📖 <strong>The Silent Patient</strong> <span style="color:var(--muted); font-size:0.9rem;">by Alex Michaelides (2019)</span></span>
+<span style="color:#f59e0b; font-size:0.9rem;">★★★★★</span>
 </li>
 </ul>
 </div>
@@ -799,25 +773,11 @@ Details to be updated later. Future books and creative projects will live here a
 <section id="now">
 <div class="container">
 <h2 class="section-title">What I'm Doing Now</h2>
-<p class="section-subtitle">Updated August 2026 • Inspired by Derek Sivers /now movement</p>
 
-<div class="now-box">
-<div class="now-item">
-<strong>✍️ Writing</strong>
-<p>Drafting my next book on curiosity and compounding intellect, plus bi-weekly essays on digital culture.</p>
-</div>
-<div class="now-item">
-<strong>📖 Reading</strong>
-<p>Exploring foundational works in epistemology, complex systems theory, and classical stoic philosophy.</p>
-</div>
-<div class="now-item">
-<strong>💻 Learning</strong>
-<p>Hands-on experimentation with modern AI frameworks, web publishing tools, and creative coding.</p>
-</div>
-<div class="now-item">
-<strong>💡 Thinking About</strong>
-<p>How curiosity compounds over multi-decade horizons and the future of deep reading.</p>
-</div>
+<div class="now-box" style="display: block;">
+<p style="font-size: 1.05rem; line-height: 1.8;">
+At the moment, I’m immersed in the publication of a satire. Between revisions, editorial discussions, and the countless details involved in preparing a book for readers, it has become the center of my professional attention. It’s a demanding process, but one that continually reminds me why I write in the first place.
+</p>
 </div>
 </div>
 </section>
@@ -827,30 +787,21 @@ Details to be updated later. Future books and creative projects will live here a
 <div class="about">
 <h2 class="section-title">About</h2>
 
-<p style="font-size: 1.2rem; font-weight: 600; color: var(--accent); margin-bottom: 10px;">
-Hi, I'm Robin.
-</p>
-
 <p>
-I'm a writer interested in ideas.
-My work explores curiosity, creativity,
-technology, history and lifelong learning.
-Rather than limiting myself to one genre,
-I enjoy following questions wherever they lead.
+I’m a writer and lifelong reader fascinated by ideas and the ways they shape the world. My work draws on a wide range of interests, including history, creativity, and learning, but I’m less interested in disciplines themselves than in the questions that connect them. Reading widely and thinking deeply are central to my approach, and much of my writing begins with a desire to understand something more clearly.
 </p>
 
 <p style="margin-top: 15px; color: var(--muted);">
-This website serves as a place to publish books,
-essays, notes and ongoing projects.
+This website is a home for my books, general musings, notes, and ongoing projects. It serves as a record of ideas explored, questions pursued, and lessons gathered through years of reading, writing, and study.
 </p>
 
 <div class="timeline">
 <h4 style="font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin-bottom:10px;">Journey & Milestones</h4>
 <div>
-<strong>2026</strong> — Launched robinasati.com
+<strong>2025</strong> — First book published
 </div>
 <div>
-<strong>2027</strong> — First book published
+<strong>2026</strong> — Launched robinasati.com
 </div>
 <div>
 <strong>Future</strong> — Many ideas yet to be explored
@@ -890,11 +841,6 @@ Thank you for subscribing! Look out for your first letter soon.
 <div class="contact-badge">
 ✉️ <a href="mailto:robinasati.author@gmail.com">robinasati.author@gmail.com</a>
 <button class="copy-btn" onclick="copyText('robinasati.author@gmail.com', this)">Copy</button>
-</div>
-
-<div class="contact-badge">
-📞 <a href="tel:+918806755679">+91 88067 55679</a>
-<button class="copy-btn" onclick="copyText('+91 88067 55679', this)">Copy</button>
 </div>
 </div>
 
