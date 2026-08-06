@@ -808,55 +808,30 @@ Details to be updated later. Future books and creative projects will live here a
 
 <section id="blog">
 <div class="container">
-<h2 class="section-title">Blog & Essays</h2>
-<p class="section-subtitle">Reflections on literature, mythology, philosophy, technology, and culture.</p>
-
-<!-- Featured Essay -->
-<div class="card" style="margin-bottom: 30px; padding: 32px; border-left: 4px solid var(--accent);">
-  <div>
-    <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">FEATURED ESSAY</div>
-    <h3 style="font-family: 'Source Serif 4', serif; font-size: 1.8rem; margin-bottom: 12px; color: var(--text);">The Mahabharata as a Mirror</h3>
-    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--muted); margin-bottom: 20px;">
-      The older I get, the less interested I become in reading the Mahabharata as history and the more interested I become in reading it as a map of human nature. Many of the qualities attributed to its characters can be read not merely as facts, but as symbols—from Dhritarashtra's moral blindness and Gandhari's chosen ignorance to Karna's exclusion, Duryodhana's comparison, and Kurukshetra as the internal human conscience...
-    </p>
-  </div>
-  <div>
-    <button class="btn btn-primary" style="margin: 0;" onclick="openEssayModal(0)">Read Full Essay →</button>
-  </div>
-</div>
+<h2 class="section-title">Blog</h2>
+<p class="section-subtitle">Reflections on literature, mythology, philosophy, and stories.</p>
 
 <div class="cards">
   <div class="card">
     <div>
-      <div style="font-size: 0.8rem; color: var(--muted); margin-bottom: 6px;">7 min read • July 2026</div>
-      <h3 style="font-size: 1.25rem;">Why Curiosity Matters More Than Talent</h3>
+      <div style="font-size: 0.8rem; color: var(--muted); margin-bottom: 6px;">8 min read • August 2026</div>
+      <h3 style="font-size: 1.35rem;">The Mahabharata as a Mirror</h3>
       <p style="font-size: 0.95rem; line-height: 1.6; color: var(--muted); margin-top: 8px;">
-        High innate ability often breeds low tolerance for friction. Curiosity operates under a completely different mechanic—it transforms the friction of not knowing into energetic engagement.
+        The older I get, the less interested I become in reading the Mahabharata as history and the more interested I become in reading it as a map of human nature. Many of the qualities attributed to its characters can be read as symbols...
       </p>
     </div>
-    <button class="btn-small" style="margin-top: 15px;" onclick="openEssayModal(1)">Read Essay</button>
+    <button class="btn-small" style="margin-top: 15px;" onclick="openEssayModal(0)">Read Essay →</button>
   </div>
 
   <div class="card">
     <div>
-      <div style="font-size: 0.8rem; color: var(--muted); margin-bottom: 6px;">5 min read • June 2026</div>
-      <h3 style="font-size: 1.25rem;">The Hidden Cost of Convenience</h3>
+      <div style="font-size: 0.8rem; color: var(--muted); margin-bottom: 6px;">6 min read • Story</div>
+      <h3 style="font-size: 1.35rem;">The Bench That Waited</h3>
       <p style="font-size: 0.95rem; line-height: 1.6; color: var(--muted); margin-top: 8px;">
-        Friction is treated as an enemy to be eradicated by modern tech. But friction is also the precise vector through which human capability and agency are forged.
+        Every evening at exactly six o’clock, an old man in a faded blue sweater made his way to Riverside Park and sat on the third bench along the path with a small paper bag filled with roasted peanuts...
       </p>
     </div>
-    <button class="btn-small" style="margin-top: 15px;" onclick="openEssayModal(2)">Read Essay</button>
-  </div>
-
-  <div class="card">
-    <div>
-      <div style="font-size: 0.8rem; color: var(--muted); margin-bottom: 6px;">12 min read • May 2026</div>
-      <h3 style="font-size: 1.25rem;">How AI Changes Learning</h3>
-      <p style="font-size: 0.95rem; line-height: 1.6; color: var(--muted); margin-top: 8px;">
-        When factual answers are instant, the value of raw storage drops to near zero. Learning pivots to epistemic hygiene, Socratic prompting, and cross-disciplinary synthesis.
-      </p>
-    </div>
-    <button class="btn-small" style="margin-top: 15px;" onclick="openEssayModal(3)">Read Essay</button>
+    <button class="btn-small" style="margin-top: 15px;" onclick="openEssayModal(1)">Read Story →</button>
   </div>
 </div>
 
@@ -1173,40 +1148,51 @@ const essayData = [
         <p style="font-weight: 600; color: var(--accent); font-size: 1.1rem; margin-top: 15px;">We read it to understand what is happening within us now.</p>`
     },
     {
-        title: "Why Curiosity Matters More Than Talent",
-        meta: "7 min read • July 2026 • Philosophy & Mind",
-        content: `<p>We routinely overestimate talent because talent produces visible early results. A child who plays piano effortlessly at seven earns immediate acclaim.</p>
-        <p>Yet when we look across thirty- or forty-year career trajectories, raw talent frequently plateaus. High innate ability often breeds low tolerance for friction. When gifted individuals encounter domains where intuition fails, they often retreat.</p>
-        <h3 style="font-family:'Source Serif 4',serif; margin-top:20px; margin-bottom:12px;">Curiosity as an Asymmetrical Advantage</h3>
-        <p>Curiosity operates under a completely different mechanic. Unlike talent, curiosity is an appetite. It transforms the friction of not knowing into an energetic engagement.</p>
-        <ul style="margin: 15px 0 15px 20px; line-height:2;">
-        <li><strong>Sustained Duration:</strong> A curious thinker stays in the problem space long after others become bored.</li>
-        <li><strong>Cross-Pollination:</strong> Curiosity drives exploration across disparate domains.</li>
-        <li><strong>Resilience to Failure:</strong> Mistakes are not an injury to identity—they are fascinating data.</li>
-        </ul>
-        <p><em>If talent grows linearly, curiosity compounds exponentially.</em></p>`
-    },
-    {
-        title: "The Hidden Cost of Convenience",
-        meta: "5 min read • June 2026 • Technology & Culture",
-        content: `<p>Modern technological progress is largely measured by how efficiently it removes friction. We order food with a tap, generate text with a prompt, and navigate cities without ever opening a map.</p>
-        <p>Friction is treated as an enemy to be eradicated. But friction is also the precise vector through which human capability is forged.</p>
-        <h3 style="font-family:'Source Serif 4',serif; margin-top:20px; margin-bottom:10px;">What We Lose When Everything Is Instant</h3>
-        <p>When physical effort and memory retrieval are outsourced entirely, subtle cognitive atrophy occurs: shortened horizons of effort, loss of serendipitous discoveries, and fragile agency.</p>
-        <p>The solution is the deliberate cultivation of <strong>intentional friction</strong> in learning, craftsmanship, and relationships.</p>`
-    },
-    {
-        title: "How AI Changes Learning",
-        meta: "12 min read • May 2026 • Education & Future",
-        content: `<p>For centuries, formal education was structured around information scarcity. The teacher held knowledge; the student's task was to absorb and reproduce it.</p>
-        <p>Generative AI fundamentally upends this paradigm. When any factual answer can be generated in seconds, the value of raw storage drops to near zero.</p>
-        <h3 style="font-family:'Source Serif 4',serif; margin-top:20px; margin-bottom:10px;">The New Core Competencies</h3>
-        <p>In an AI-augmented world, learning focuses on three high-order capabilities:</p>
-        <ol style="margin:15px 0 15px 20px; line-height:2;">
-        <li><strong>Epistemic Hygiene:</strong> Auditing claims and verifying source truth.</li>
-        <li><strong>Socratic Prompting:</strong> Formulating precise, constrained, high-level questions.</li>
-        <li><strong>Cross-Disciplinary Synthesis:</strong> Connecting ideas across radically different fields.</li>
-        </ol>`
+        title: "The Bench That Waited",
+        meta: "6 min read • Story",
+        content: `<p style="margin-bottom: 16px;">Every evening at exactly six o’clock, an old man in a faded blue sweater made his way to Riverside Park and sat on the third bench along the path. He never carried a newspaper, a phone, or a book. The only thing he brought was a small paper bag filled with roasted peanuts. People often noticed him. Adults assumed he was lonely. Children preferred to believe he was magical. The pigeons, however, seemed interested only in the peanuts.</p>
+
+        <p style="margin-bottom: 16px;">One rainy Tuesday, a little girl stopped in front of his bench and asked, “Who are you waiting for?” The old man smiled warmly and replied, “Someone who may never come.” The girl frowned. “Then why wait?” For a moment, he looked down the empty path stretching through the park. “Because once upon a time,” he said softly, “someone waited for me.” The answer seemed to puzzle her, but when he offered her a handful of peanuts, she accepted them as though they were precious jewels.</p>
+
+        <p style="margin-bottom: 16px;">The next day, she returned. Then she came back again the day after that. Before long, she began bringing him drawings. One was of a bright yellow cat. Another showed a crooked rainbow bending awkwardly across the page. Her favorite was a tree with purple leaves. When he asked why the leaves were purple, she shrugged and said, “Trees must get bored of being green.” The old man laughed, and the drawing earned a place among his treasured possessions.</p>
+
+        <p style="margin-bottom: 16px;">Weeks turned into months. They rarely spoke for long, yet neither seemed to mind. Children rarely need endless conversations to feel understood, and old men often appreciate companionship that exists comfortably in silence. Together, they shared the bench, fed the pigeons, and watched the seasons change around them.</p>
+
+        <p style="margin-bottom: 16px;">Then one winter evening, she did not come. The next day passed without her appearing. Then another. Soon, an entire week slipped by. The old man still arrived at six o’clock every evening, but the third bench felt larger than it once had. Even the pigeons seemed to sense the absence.</p>
+
+        <p style="margin-bottom: 16px;">Spring eventually returned, bringing flowers, sunshine, and unfamiliar faces to the park. Life continued as it always does. Then one afternoon, years later, a young woman approached the bench holding the hand of a small boy. She smiled uncertainly and said, “You probably won’t remember me.” The old man looked up. Without another word, she unfolded a worn, crumpled drawing. It was a tree with purple leaves.</p>
+
+        <p style="margin-bottom: 16px;">Recognition immediately brightened his face.</p>
+
+        <p style="margin-bottom: 16px;">“I had to move away,” she explained. “But my mother kept every drawing I ever made. Before she passed away, she told me there was one person I should come back and thank.” The old man gently touched the edge of the paper. “Thank me for what?” he asked.</p>
+
+        <p style="margin-bottom: 16px;">“For teaching me that showing up matters,” she said. “That caring isn’t always something you say. Sometimes it’s something you do.”</p>
+
+        <p style="margin-bottom: 16px;">The old man chuckled softly. “I don’t remember teaching that lesson.”</p>
+
+        <p style="margin-bottom: 16px;">“You didn’t,” she replied. “You lived it.”</p>
+
+        <p style="margin-bottom: 16px;">She placed a fresh paper bag of roasted peanuts beside him. “My son asked me this morning why we were coming here,” she continued.</p>
+
+        <p style="margin-bottom: 16px;">“What did you tell him?”</p>
+
+        <p style="margin-bottom: 16px;">“I told him we were visiting someone who kept a promise he never made.”</p>
+
+        <p style="margin-bottom: 16px;">The little boy climbed onto the bench between them and looked eagerly at the pigeons gathering nearby. “Can I feed them?” he asked.</p>
+
+        <p style="margin-bottom: 16px;">The old man nodded. “Of course. But save a few peanuts for tomorrow.”</p>
+
+        <p style="margin-bottom: 16px;">The boy grinned. “Are you coming back tomorrow?”</p>
+
+        <p style="margin-bottom: 16px;">The old man looked around the park, taking in the familiar paths, the swaying trees, and the bench that had witnessed so much of his life. Then he smiled.</p>
+
+        <p style="margin-bottom: 16px;">“I’ve been coming back for twenty-three years.”</p>
+
+        <p style="margin-bottom: 16px;">“Then I’ll come too,” the boy said.</p>
+
+        <p style="margin-bottom: 16px;">As the pigeons fluttered around their feet, the old man realized something he had never understood before. For years, he believed he was waiting for someone. But somewhere along the way, the waiting had changed into something else. He was no longer sitting on that bench because he hoped someone would return. He sat there because his presence had become part of other people’s stories.</p>
+
+        <p style="margin-bottom: 16px;">And in that quiet moment, surrounded by laughter, memories, and the promise of tomorrow, he understood that becoming the reason someone returns is sometimes a far happier ending than the one you were waiting for.</p>`
     }
 ];
 
