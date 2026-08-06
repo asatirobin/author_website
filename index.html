@@ -7,7 +7,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Caveat:wght@600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Sacramento&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -75,13 +75,19 @@ nav {
 }
 
 .logo {
-    font-family: 'Great Vibes', 'Alex Brush', 'Sacramento', 'Caveat', cursive;
-    font-size: 2.1rem;
-    font-weight: 400;
+    font-family: 'Cinzel', 'Cormorant Garamond', 'Source Serif 4', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 600;
     text-decoration: none;
     color: var(--text);
-    line-height: 1.1;
-    letter-spacing: 0.5px;
+    line-height: 1.2;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+.logo:hover {
+    color: var(--accent);
 }
 
 .nav-links {
@@ -120,8 +126,16 @@ nav {
 }
 
 .hero {
-    padding: 120px 0 90px 0;
+    position: relative;
+    padding: 140px 0 110px 0;
     text-align: center;
+    background-image: linear-gradient(rgba(12, 14, 18, 0.62), rgba(12, 14, 18, 0.78)), url('assets/images/hero_library_bg_1785691081527.jpg'), url('assets/images/hero_library_bg.jpg'), url('hero_library_bg.jpg');
+    background-size: cover;
+    background-position: center 38%;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
 }
 
 .hero h1 {
@@ -130,13 +144,38 @@ nav {
     line-height: 1.1;
     margin-bottom: 20px;
     font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.7);
 }
 
 .hero p {
-    max-width: 700px;
+    max-width: 720px;
     margin: auto;
-    font-size: 1.2rem;
-    color: var(--muted);
+    font-size: 1.25rem;
+    color: #f1f5f9;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.8);
+    line-height: 1.7;
+}
+
+.hero .btn-primary {
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.hero .btn-secondary {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.hero .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.28);
+    border-color: rgba(255, 255, 255, 0.65);
 }
 
 .cta {
@@ -547,19 +586,32 @@ section {
 }
 
 .contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
     margin-bottom: 40px;
-    color: var(--muted);
 }
 
 .contact-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--card);
+    border: 1px solid var(--border);
     color: var(--text);
+    transition: all 0.2s ease;
     text-decoration: none;
-    font-weight: 500;
-    margin: 0 8px;
 }
 
 .contact-links a:hover {
     color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .contact-form {
@@ -685,7 +737,7 @@ footer {
 <div class="container">
 <h1>Books. Ideas. Stories.</h1>
 <p>
-Exploring curiosity, learning, technology, history,
+Exploring curiosity, learning, history,
 creativity, and the questions that shape our lives.
 This is my digital home for books, blog, and ongoing projects.
 </p>
@@ -705,7 +757,7 @@ This is my digital home for books, blog, and ongoing projects.
 <div class="card">
 <div>
 <div class="book-cover-wrap">
-<img src="assets/images/distance_to_yesterday_1785655951357.jpg" alt="The Distance to Yesterday Book Cover" class="book-cover-img">
+<img src="assets/images/distance_to_yesterday_1785655951357.jpg" onerror="this.onerror=null; this.src='distance_to_yesterday_1785655951357.jpg';" alt="The Distance to Yesterday Book Cover" class="book-cover-img">
 <span class="released-badge">AVAILABLE NOW</span>
 </div>
 <h3 style="margin-bottom: 4px;">The Distance to Yesterday</h3>
@@ -752,8 +804,58 @@ Details to be updated later. Future books and creative projects will live here a
 
 <section id="blog">
 <div class="container">
-<h2 class="section-title">Blog</h2>
-<p class="section-subtitle">To be updated</p>
+<h2 class="section-title">Blog & Essays</h2>
+<p class="section-subtitle">Reflections on literature, mythology, philosophy, technology, and culture.</p>
+
+<!-- Featured Essay -->
+<div class="card" style="margin-bottom: 30px; padding: 32px; border-left: 4px solid var(--accent);">
+  <div>
+    <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">FEATURED ESSAY</div>
+    <h3 style="font-family: 'Source Serif 4', serif; font-size: 1.8rem; margin-bottom: 12px; color: var(--text);">The Mahabharata as a Mirror</h3>
+    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--muted); margin-bottom: 20px;">
+      The older I get, the less interested I become in reading the Mahabharata as history and the more interested I become in reading it as a map of human nature. Many of the qualities attributed to its characters can be read not merely as facts, but as symbols—from Dhritarashtra's moral blindness and Gandhari's chosen ignorance to Karna's exclusion, Duryodhana's comparison, and Kurukshetra as the internal human conscience...
+    </p>
+  </div>
+  <div>
+    <button class="btn btn-primary" style="margin: 0;" onclick="openEssayModal(0)">Read Full Essay →</button>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="card">
+    <div>
+      <div style="font-size: 0.8rem; color: var(--muted); margin-bottom: 6px;">7 min read • July 2026</div>
+      <h3 style="font-size: 1.25rem;">Why Curiosity Matters More Than Talent</h3>
+      <p style="font-size: 0.95rem; line-height: 1.6; color: var(--muted); margin-top: 8px;">
+        High innate ability often breeds low tolerance for friction. Curiosity operates under a completely different mechanic—it transforms the friction of not knowing into energetic engagement.
+      </p>
+    </div>
+    <button class="btn-small" style="margin-top: 15px;" onclick="openEssayModal(1)">Read Essay</button>
+  </div>
+
+  <div class="card">
+    <div>
+      <div style="font-size: 0.8rem; color: var(--muted); margin-bottom: 6px;">5 min read • June 2026</div>
+      <h3 style="font-size: 1.25rem;">The Hidden Cost of Convenience</h3>
+      <p style="font-size: 0.95rem; line-height: 1.6; color: var(--muted); margin-top: 8px;">
+        Friction is treated as an enemy to be eradicated by modern tech. But friction is also the precise vector through which human capability and agency are forged.
+      </p>
+    </div>
+    <button class="btn-small" style="margin-top: 15px;" onclick="openEssayModal(2)">Read Essay</button>
+  </div>
+
+  <div class="card">
+    <div>
+      <div style="font-size: 0.8rem; color: var(--muted); margin-bottom: 6px;">12 min read • May 2026</div>
+      <h3 style="font-size: 1.25rem;">How AI Changes Learning</h3>
+      <p style="font-size: 0.95rem; line-height: 1.6; color: var(--muted); margin-top: 8px;">
+        When factual answers are instant, the value of raw storage drops to near zero. Learning pivots to epistemic hygiene, Socratic prompting, and cross-disciplinary synthesis.
+      </p>
+    </div>
+    <button class="btn-small" style="margin-top: 15px;" onclick="openEssayModal(3)">Read Essay</button>
+  </div>
+</div>
+
 </div>
 </section>
 
@@ -836,7 +938,7 @@ This website is a home for my books, general musings, notes, and ongoing project
 </div>
 
 <div class="about-image-wrapper">
-<img src="assets/images/robin_photo.jpg" alt="Robin Asati" class="about-photo">
+<img src="assets/images/robin_photo.jpg" onerror="this.onerror=null; this.src='robin_photo.jpg';" alt="Robin Asati" class="about-photo">
 </div>
 </div>
 
@@ -878,9 +980,15 @@ Thank you for subscribing! Look out for your first letter soon.
 </div>
 
 <div class="contact-links">
-<a href="https://linkedin.com" target="_blank">LinkedIn</a> •
-<a href="https://x.com" target="_blank">X</a> •
-<a href="https://www.instagram.com/farraginouswriter/" target="_blank">Instagram</a>
+<a href="https://www.linkedin.com/in/robin-asati-31274a20?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+</a>
+<a href="https://x.com/robinasati?s=11" target="_blank" rel="noopener noreferrer" aria-label="X" title="X (Twitter)">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+</a>
+<a href="https://www.instagram.com/robinasati?igsh=MWZwbHIxdGJteHQ3Yg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+</a>
 </div>
 
 <div class="contact-form">
@@ -990,11 +1098,82 @@ function filterReading(status, btn) {
 
 const essayData = [
     {
+        title: "The Mahabharata as a Mirror",
+        meta: "8 min read • August 2026 • Philosophy & Epics",
+        content: `<p style="margin-bottom: 16px;">The older I get, the less interested I become in reading the Mahabharata as history and the more interested I become in reading it as a map of human nature.</p>
+
+        <p style="margin-bottom: 16px;">Perhaps this is why the epic continues to endure. It is not because it provides definitive answers, but because its characters seem to contain more than one truth. Every generation discovers its own Mahabharata. Every reader finds a different lesson hidden beneath the familiar story.</p>
+
+        <p style="margin-bottom: 24px;">Many of the qualities attributed to its characters can be read not merely as facts, but as symbols. Viewed through this lens, the epic transforms from a tale of kings and warriors into a meditation on human strengths and failures.</p>
+
+        <h3 style="font-family:'Source Serif 4',serif; margin-top:28px; margin-bottom:12px; font-size:1.35rem; color:var(--text);">Take Dhritarashtra.</h3>
+
+        <p style="margin-bottom: 16px;">We are told he was blind. Yet his deeper blindness may have had little to do with his eyes. He was surrounded by signs of injustice. He knew the ambitions of Duryodhana, witnessed the humiliation of Draupadi, and understood the consequences of remaining silent. Yet at crucial moments, he chose inaction over responsibility.</p>
+
+        <p style="margin-bottom: 24px;">The blindness that destroyed his kingdom was not an inability to see. It was an inability to confront truths that threatened those he loved. In that sense, Dhritarashtra becomes less a historical king and more a symbol of every parent, leader, or citizen who recognizes wrongdoing but lacks the courage to oppose it.</p>
+
+        <h3 style="font-family:'Source Serif 4',serif; margin-top:28px; margin-bottom:12px; font-size:1.35rem; color:var(--text);">Gandhari's Blindfold</h3>
+
+        <p style="margin-bottom: 16px;">Gandhari's blindfold acquires a different meaning as well.</p>
+
+        <p style="margin-bottom: 16px;">Tradition celebrates it as a gesture of devotion, but it can also be interpreted as a metaphor for voluntary ignorance. There are realities we sometimes refuse to acknowledge because they are inconvenient, painful, or disruptive. The blindfold becomes a symbol of self-imposed limitation, of the human tendency to avoid truths that demand action.</p>
+
+        <p style="margin-bottom: 24px;">Seen this way, Gandhari and Dhritarashtra embody two different forms of blindness: one born of attachment, the other born of choice.</p>
+
+        <h3 style="font-family:'Source Serif 4',serif; margin-top:28px; margin-bottom:12px; font-size:1.35rem; color:var(--text);">Karna's Struggle</h3>
+
+        <p style="margin-bottom: 16px;">Karna's story reveals another kind of struggle.</p>
+
+        <p style="margin-bottom: 16px;">His life is often framed as a tragedy caused by fate, misfortune, and curses. Yet what follows him throughout the epic is not merely bad luck. It is a profound sense of exclusion. Despite his extraordinary talent, he remains haunted by questions of identity and belonging. Every insult leaves a scar. Every achievement becomes an attempt to prove his worth.</p>
+
+        <p style="margin-bottom: 24px;">Perhaps Karna's curses are symbolic rather than supernatural. They represent the invisible burdens people carry from childhood, burdens that influence decisions long after the original wounds have faded. Talent alone is rarely enough to overcome unresolved hurt. Some battles are fought not against enemies but against the stories we tell ourselves about who we are.</p>
+
+        <h3 style="font-family:'Source Serif 4',serif; margin-top:28px; margin-bottom:12px; font-size:1.35rem; color:var(--text);">Duryodhana & Comparison</h3>
+
+        <p style="margin-bottom: 16px;">Duryodhana, too, appears differently under this reading.</p>
+
+        <p style="margin-bottom: 16px;">He is often remembered as the villain of the epic, yet his defining trait may not be cruelty alone. It may be comparison.</p>
+
+        <p style="margin-bottom: 16px;">He grows up measuring himself against the Pandavas. Their success becomes his grievance. Their strength becomes his insecurity. Their achievements become evidence of his own inadequacy.</p>
+
+        <p style="margin-bottom: 24px;">Comparison transforms abundance into scarcity. It convinces a person that another's rise is somehow their loss. Duryodhana's tragedy lies in his inability to celebrate his own strengths because he is consumed by someone else's. The seeds of destruction are planted long before the war begins.</p>
+
+        <h3 style="font-family:'Source Serif 4',serif; margin-top:28px; margin-bottom:12px; font-size:1.35rem; color:var(--text);">Kurukshetra as the Human Mind</h3>
+
+        <p style="margin-bottom: 16px;">And then there is Kurukshetra itself.</p>
+
+        <p style="margin-bottom: 16px;">The most compelling interpretation of the battlefield may be that it exists nowhere and everywhere at the same time.</p>
+
+        <p style="margin-bottom: 16px;">The war is fought whenever principle clashes with ambition, whenever duty confronts desire, whenever conscience struggles against convenience. The Pandavas and Kauravas become competing impulses within the human mind. The battle is not between two families but between two possibilities of being.</p>
+
+        <p style="margin-bottom: 16px;">In that sense, every life contains its own Kurukshetra.</p>
+
+        <p style="margin-bottom: 24px;">The Bhagavad Gita then ceases to be merely advice given to a warrior before battle. It becomes guidance for navigating uncertainty, moral conflict, fear, and responsibility. The battlefield is internal long before it becomes external.</p>
+
+        <h3 style="font-family:'Source Serif 4',serif; margin-top:28px; margin-bottom:12px; font-size:1.35rem; color:var(--text);">A Mirror for Us</h3>
+
+        <p style="margin-bottom: 16px;">This symbolic reading does not seek to replace the traditional Mahabharata. Rather, it exists alongside it. Great works survive because they can be understood at multiple levels simultaneously. Their characters remain alive because they continue to resemble us.</p>
+
+        <ul style="margin: 20px 0 24px 0; padding-left: 0; line-height: 2; list-style-type: none;">
+          <li style="margin-bottom: 8px;">• <strong>A blind king</strong> becomes moral blindness.</li>
+          <li style="margin-bottom: 8px;">• <strong>A blindfold</strong> becomes chosen ignorance.</li>
+          <li style="margin-bottom: 8px;">• <strong>A curse</strong> becomes emotional baggage.</li>
+          <li style="margin-bottom: 8px;">• <strong>A villain</strong> becomes the destructive power of comparison.</li>
+          <li style="margin-bottom: 8px;">• <strong>A battlefield</strong> becomes the human conscience.</li>
+        </ul>
+
+        <p style="margin-bottom: 16px;">The Mahabharata remains relevant not because it describes an ancient world, but because it describes us. Its kingdoms may have disappeared, its warriors may belong to legend, but the struggles they embody continue to unfold in homes, workplaces, institutions, and minds every day.</p>
+
+        <p style="margin-bottom: 16px;">Perhaps that is why we keep returning to it. We do not read the Mahabharata to learn what happened long ago.</p>
+
+        <p style="font-weight: 600; color: var(--accent); font-size: 1.1rem; margin-top: 15px;">We read it to understand what is happening within us now.</p>`
+    },
+    {
         title: "Why Curiosity Matters More Than Talent",
         meta: "7 min read • July 2026 • Philosophy & Mind",
         content: `<p>We routinely overestimate talent because talent produces visible early results. A child who plays piano effortlessly at seven earns immediate acclaim.</p>
         <p>Yet when we look across thirty- or forty-year career trajectories, raw talent frequently plateaus. High innate ability often breeds low tolerance for friction. When gifted individuals encounter domains where intuition fails, they often retreat.</p>
-        <h3 style="font-family:'Source Serif 4',serif; margin-top:20px; margin-bottom:100px;">Curiosity as an Asymmetrical Advantage</h3>
+        <h3 style="font-family:'Source Serif 4',serif; margin-top:20px; margin-bottom:12px;">Curiosity as an Asymmetrical Advantage</h3>
         <p>Curiosity operates under a completely different mechanic. Unlike talent, curiosity is an appetite. It transforms the friction of not knowing into an energetic engagement.</p>
         <ul style="margin: 15px 0 15px 20px; line-height:2;">
         <li><strong>Sustained Duration:</strong> A curious thinker stays in the problem space long after others become bored.</li>
@@ -1043,7 +1222,7 @@ function openBookModal(type) {
     if (type === 'distance' || type === 'upcoming') {
         body.innerHTML = `
             <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 20px;">
-              <img src="assets/images/distance_to_yesterday_1785655951357.jpg" alt="The Distance to Yesterday" style="width: 150px; height: 220px; object-fit: cover; border-radius: 10px; border: 1px solid var(--border);" />
+              <img src="assets/images/distance_to_yesterday_1785655951357.jpg" onerror="this.onerror=null; this.src='distance_to_yesterday_1785655951357.jpg';" alt="The Distance to Yesterday" style="width: 150px; height: 220px; object-fit: cover; border-radius: 10px; border: 1px solid var(--border);" />
               <div style="flex: 1; min-width: 220px;">
                 <div style="font-size:0.85rem; color:#10b981; font-weight:700; text-transform:uppercase; margin-bottom:5px;">AVAILABLE NOW • RELEASED</div>
                 <h2 style="font-family:'Source Serif 4',serif; font-size:2rem; margin-bottom:5px;">The Distance to Yesterday</h2>
